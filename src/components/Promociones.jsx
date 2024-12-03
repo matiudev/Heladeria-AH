@@ -1,4 +1,3 @@
-import React, { useEffect, useRef } from "react";
 import SeparadorTop from "./Separadores/SeparadorTop";
 import SeparadorButtom from "./Separadores/SeparadorButtom";
 import { Link } from 'react-router-dom';
