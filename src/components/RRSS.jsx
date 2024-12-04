@@ -24,11 +24,14 @@ export default function RRSS() {
   ];
   
   return (
-    <div className="flex-col px-24 py-20" style={{ width: "100%" }}>
-      <h2 className="font-tittle2 text-7xl text-[#de2d7a] py-2">
-        Siguenos en Nuestras Redes
+    <div className="flex flex-col items-center px-6 sm:px-12 lg:px-24 py-10 w-full">
+      {/* Título */}
+      <h2 className="font-tittle2 text-3xl sm:text-5xl lg:text-7xl text-[#de2d7a] py-4 text-center">
+        Síguenos en Nuestras Redes
       </h2>
-      <div className='grid grid-cols-3 gap-6 mt-11'>
+
+      {/* Redes Sociales */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-10 w-full">
         {rrss.map((social, index) => (
           <a
             key={index}
@@ -38,23 +41,21 @@ export default function RRSS() {
             rel="noopener noreferrer" // Mejora la seguridad al abrir enlaces externos
           >
             <div className="relative w-full h-60">
+              {/* Imagen de fondo */}
               <img
                 src={social.img}
                 alt={social.nombre}
-                className="w-full h-full object-cover transition duration-300"
+                className="w-full h-full object-cover transition-transform duration-300 transform hover:scale-110"
               />
-              {/* Fondo negro con opacidad que aparece al hacer hover */}
+              {/* Fondo negro con opacidad y contenido al hacer hover */}
               <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                {/* Icono de la red social (puedes poner el nombre o icono según el caso) */}
-                <i className={`text-white text-4xl ${social.iconClass}`}></i> {/* Ajusta el nombre del icono aquí */}
+                {/* Icono de la red social */}
+                <i className={`text-white text-5xl ${social.iconClass}`}></i>
               </div>
             </div>
           </a>
         ))}
       </div>
-
-
-
     </div>
-  )
+  );
 }

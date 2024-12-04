@@ -13,39 +13,43 @@ import { Link } from 'react-router-dom';
     "https://z-p3-scontent.fiqq2-1.fna.fbcdn.net/v/t51.75761-15/464826219_17990016992707896_9105478172934284488_n.jpg?stp=dst-jpg_tt6&_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEC8hDPas44IU1KC8wTv_EBhNUcD6IpPBaE1RwPoik8FlrGJ9iSt5bbpOfBZIoggfWjzz_HtGkVNe1Pnxoc6DND&_nc_ohc=PmVYVtpTcRkQ7kNvgG0V3QI&_nc_zt=23&_nc_ht=z-p3-scontent.fiqq2-1.fna&_nc_gid=Ags_zWguNeadrpNpXc2q-iV&oh=00_AYCiQUEZaYC7qEHigen3EI5haabcfJ0fvH80rxP6FCdpDg&oe=67542EAA",
   ];
 
-function Promociones() {
-  return (
-    <div className="flex-col bg-[#f7e6ec]" style={{ width: "100%" }}>
-      <SeparadorTop />
-      <div className="flex-col px-24 py-8 bg-[#f7e6ec]" >
-        <h2 className="font-tittle text-7xl text-[#de2d7a] py-2">
-          Productos Destacados
-        </h2>
-        <Link
-          className="text-2xl text-[#510623]"
-          to="/carta-productos"
-        >
-          –{'>'} ¡Descubre todos los sabores! {'<'}–
-        </Link>
-        <div className="grid grid-cols-3 gap-6 mt-11">
-          {iceCreamPromos.map((imageUrl, index) => (
-            <div
-              key={index}
-              className="bg-white shadow-lg rounded-lg overflow-hidden"
-            >
-              <img
-                src={imageUrl}
-                alt={`Ice cream promo ${index + 1}`}
-                className="w-full h-full object-cover"
-              />
-            </div>
-          ))}
+  function Promociones() {
+    return (
+      <div className="flex flex-col bg-[#f7e6ec] w-full">
+        <SeparadorTop />
+        <div className="flex flex-col px-6 sm:px-12 lg:px-24 py-8 bg-[#f7e6ec]">
+          {/* Título */}
+          <h2 className="font-tittle text-3xl sm:text-5xl lg:text-7xl text-[#de2d7a] py-2 text-center">
+            Productos Destacados
+          </h2>
+          {/* Enlace */}
+          <Link
+            className="text-lg sm:text-2xl text-[#510623] text-center mt-4"
+            to="/carta-productos"
+          >
+            –{'>'} ¡Descubre todos los sabores! {'<'}–
+          </Link>
+          {/* Grid de productos */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-11">
+            {iceCreamPromos.map((imageUrl, index) => (
+              <div
+                key={index}
+                className="bg-white shadow-lg rounded-lg overflow-hidden"
+              >
+                <img
+                  src={imageUrl}
+                  alt={`Ice cream promo ${index + 1}`}
+                  className="w-full h-48 sm:h-64 object-cover"
+                />
+              </div>
+            ))}
+          </div>
         </div>
+        <SeparadorButtom />
       </div>
-      <SeparadorButtom />
-    </div>
-  );
-}
+    );
+  }
+  
 
 
 export default Promociones;
